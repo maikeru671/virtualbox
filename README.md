@@ -1,7 +1,12 @@
 
 
-**VM type**: Linux (RHEL 9.7)
+# Create a PowerShell script to turn on a Linux VM in virtualbox and automatically SSH into it without a password
 
+
+
+Virtualization platform: virtualbox
+Virtual machine OS: Linux RHEL 9.7
+Scripting/Command line languages used: PowerShell, Bash
 
 
 ### STEP 1. Assign a static IP address to the Linux VM.###
