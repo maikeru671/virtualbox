@@ -6,7 +6,7 @@
 
 
 
-### STEP 1. Assign a static IP address to the Linux VM.###
+### STEP 1. Assign a static IP address to the Linux VM.
 
 We first assign a static ip address to the VM running in virtualbox. We do this because we do not want to keep updating the script with the new ip address when or should it change.
 
@@ -16,22 +16,32 @@ nmcli device status`
 
 
 In my example screenshot above, the connection I want to give a static ip address to is "enp0s8".  Use the below command to set the static ip address:
- `sudo nmcli connection modify "enp0s8" ipv4.method manual ipv4.addresses <Put the ip address you want here>/<Put the CIDR notation here> ipv4.never-default yes`
+```
+sudo nmcli connection modify "enp0s8" ipv4.method manual ipv4.addresses <Put the ip address you want here>/<Put the CIDR notation here> ipv4.never-default yes
+```
+ 
  
  Next, bring the connection down:
- `sudo nmcli connection down "enp0s8"
+```
+ sudo nmcli connection down "enp0s8"
+```
 
 Then bring the connection back up:
-`sudo nmcli connection up "enp0s8"
+```
+sudo nmcli connection up "enp0s8"
+```
 
 
 We bring the connection down and then back up to ensure the settings stick. If we do not take this step, the ip address might not update.
 
 
 Now, check that the connection profile has the ip address that you have set:
-`ip a show enp0s8` (NOTE: my connection profile is called enp0s8, your profile name may be different.)
+```
+ip a show enp0s8 
+```
+
 ![](images/afterchangingip.png)
-We set the ip address to 192.168.56.101. We can see in the screenshot above that the ip address has been set to that.
+The ip address was set to 192.168.56.101. Since the command we just ran shows that ip address, we are good to proceed.
 
 
 
