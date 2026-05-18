@@ -23,7 +23,7 @@ nmcli device status
 ![](images/nmclidevicestatus.png)
 
 
-In my example screenshot above, the connection profile I want to give a static ip address to is "enp0s8".  Use the below command to set the static ip address:
+In my example screenshot above, the connection profile I want to give a static ip address to is "enp0s8".  Use the below command to set the static ip address. NOTE, there is an example in the code block below on what it should look like when filled out correctly.:
 ```
 sudo nmcli connection modify "Name of your connection profile" ipv4.method manual ipv4.addresses <Put the ip address you want here>/<Put the CIDR notation here> ipv4.never-default yes
 
@@ -64,13 +64,16 @@ The ip address was set to 192.168.56.101. Since the command we just ran shows th
 
 <br>
 ## Step 2. Public/private SSH key creation.
-Now that the ip address has been set statically on the Linux VM, we need to make a public/private SSH key pair. This key pair is what'll allow us to connect to the Linux VM without a password. To create a public and private SSH key pair on your Windows machine, open PowerShell as administrator and do the below:
+Now that the ip address has been set statically on the Linux VM, we need to make a public/private SSH key pair. This key pair is what'll allow us to connect to the Linux VM without a password. To create a public/private SSH key pair on your Windows machine, open PowerShell as administrator and do the below:
 ```powershell
 ssh-keygen -t ed25519 -f "$env:USERPROFILE\.ssh\<Put any name you want here>"
 ```
 
 
-Doing the above will put the public and private SSH key pair into the .ssh directory on your machine. If you go into that directory, one of the files will end with .pub, and that is the one we will want to send to the Linux VM. To send that public key over to Linux VM, do the below:
+Now that the key pairs have been created, just to confirm, ensure they exist in the .ssh directory on your machine. In my instance, the .ssh directory was created in my user directory. If you go into that directory you will see the keys you just created. Note you will see one ending in ".pub". This .pub key is the one we will be sending over the Linux VM.
+
+
+To send that public key over to Linux VM, do the below:
 ```powershell
 Get-Content "$env:USERPROFILE\.ssh\<The name of your public SSH key file" | ssh <Your linux username>@<ip address of your Linux VM> "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 ```
