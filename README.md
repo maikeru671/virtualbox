@@ -3,12 +3,15 @@
 # Create a PowerShell script to turn on a Linux VM in virtualbox and automatically SSH into it without a password
 
 
-
-
-
-### STEP 1. Assign a static IP address to the Linux VM.
-
-We first assign a static ip address to the VM running in virtualbox. We do this because we do not want to keep updating the script with the new ip address when or should it change.
+<br>
+**Quick overview of the steps:**
+- Give the Linux VM a static ip address.
+- Create a public/private SSH key pair on local Windows machine. Transfer the public SSH key to the Linux VM.
+- Fill out the PowerShell script with your information. Save the script to your desired location. Tun off the Linux VM if it is on. Run the script and confirm if it works.
+ 
+ <br>
+### Step 1. Assign a static IP address to the Linux VM.
+We first assign a static ip address to the VM running in virtualbox.  If we don't assign a static ip address, should it change, we will need to keep going back into the script to update the ip.
 
 Access the Linux VM. Identify the connection you want to give a static ip address to:
 ```
@@ -54,8 +57,7 @@ The ip address was set to 192.168.56.101. Since the command we just ran shows th
 
 <br>
 
-### STEP 2. Create public/private SSH key pair, fill out PowerShell script, and then test.
-
+### Step 2. Create public/private SSH key pair, fill out PowerShell script, and then test.
 Now that the ip address has been set statically (meaning it never changes) on the Linux VM, we can proceed in using a PowerShell script to turn on the VM and connect to it via SSH without a password.
 
 I am running a Windows machine and I am using PowerShell. The script I am using is below. *NOTE* that before we just copy/paste and use this script, we first need to create public and private ssh keys on our Windows machine so that we can log in to the Linux VM without a password. Once we create the keys, we upload the public SSH key to the Linux VM and then we can use the script below.
