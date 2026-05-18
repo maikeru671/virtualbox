@@ -62,7 +62,8 @@ The ip address was set to 192.168.56.101. Since the command we just ran shows th
 <br>
 <br>
 
-<br>
+
+
 ## Step 2. Public/private SSH key creation.
 Now that the ip address has been set statically on the Linux VM, we need to make a public/private SSH key pair. This key pair is what'll allow us to connect to the Linux VM without a password. To create a public/private SSH key pair on your Windows machine, open PowerShell as administrator and do the below:
 ```powershell
