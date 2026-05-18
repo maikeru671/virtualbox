@@ -113,6 +113,8 @@ ssh -i "$env:USERPROFILE\.ssh\virtualbox_lab_ed25519" "$Username@$VMIP"
 ```
 
 
+<br>
+
 ## Step 2.1 Public/private SSH key creation
 To create a public and private SSH key pair on your Windows machine, open PowerShell as administrator and do the below:
 ```powershell
@@ -131,7 +133,7 @@ Check that the public key was transferred to the Linux VM. Log in to the VM and 
 cat .ssh/authorized_keys
 ```
 
-
+<br>
 
 ## Step 2.2 Fill out the PowerShell script and run it.
 Now that the public SSH key is on the Linux VM, fill out the PowerShell script as seen earlier with your information. For myself, I put the script into PowerShell ISE, filled it out, and then saved it as a .ps1 file to my desktop for easy access.
