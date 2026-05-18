@@ -4,12 +4,15 @@
 
 
 <br>
+
 **Quick overview of the steps:**
+
 - Give the Linux VM a static ip address.
 - Create a public/private SSH key pair on local Windows machine. Transfer the public SSH key to the Linux VM.
 - Fill out the PowerShell script with your information. Save the script to your desired location. Tun off the Linux VM if it is on. Run the script and confirm if it works.
  
  <br>
+
 ### Step 1. Assign a static IP address to the Linux VM.
 We first assign a static ip address to the VM running in virtualbox.  If we don't assign a static ip address, should it change, we will need to keep going back into the script to update the ip.
 
