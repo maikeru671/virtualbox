@@ -109,7 +109,7 @@ if ($SSHTestPassed -eq $false) {
 Write-Host "SSH connection test passed."
 Write-Host "Connecting to VM..."
 
-ssh -i "$env:USERPROFILE\.ssh\virtualbox_lab_ed25519" "$Username@$VMIP"
+ssh -i "$env:USERPROFILE\.ssh\<Name of your private SSH key>" "$Username@$VMIP"
 ```
 
 
