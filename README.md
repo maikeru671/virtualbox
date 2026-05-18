@@ -4,9 +4,6 @@
 
 
 
-Virtualization platform: virtualbox
-Virtual machine OS: Linux RHEL 9.7
-Scripting/Command line languages used: PowerShell, Bash
 
 
 ### STEP 1. Assign a static IP address to the Linux VM.###
@@ -22,17 +19,17 @@ In my example screenshot above, the connection I want to give a static ip addres
  `sudo nmcli connection modify "enp0s8" ipv4.method manual ipv4.addresses <Put the ip address you want here>/<Put the CIDR notation here> ipv4.never-default yes`
  
  Next, bring the connection down:
- `sudo nmcli connection down "enp0s8"`
+ `sudo nmcli connection down "enp0s8"
 
 Then bring the connection back up:
-``sudo nmcli connection up "enp0s8"`
+`sudo nmcli connection up "enp0s8"
 
 
 We bring the connection down and then back up to ensure the settings stick. If we do not take this step, the ip address might not update.
 
 
 Now, check that the connection profile has the ip address that you have set:
-ip a show enp0s8` (NOTE: my connection profile is called enp0s8, your profile name may be different.)
+`ip a show enp0s8` (NOTE: my connection profile is called enp0s8, your profile name may be different.)
 ![](images/afterchangingip.png)
 We set the ip address to 192.168.56.101. We can see in the screenshot above that the ip address has been set to that.
 
