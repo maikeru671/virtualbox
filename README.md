@@ -11,7 +11,9 @@
 We first assign a static ip address to the VM running in virtualbox. We do this because we do not want to keep updating the script with the new ip address when or should it change.
 
 Access the Linux VM. Identify the connection you want to give a static ip address to:
-nmcli device status`
+```
+nmcli device status
+```
 ![](images/nmclidevicestatus.png)
 
 
@@ -42,6 +44,10 @@ ip a show enp0s8
 
 ![](images/afterchangingip.png)
 The ip address was set to 192.168.56.101. Since the command we just ran shows that ip address, we are good to proceed.
+
+
+
+
 
 
 
