@@ -10,7 +10,7 @@ We first assign a static ip address to the VM running in virtualbox. We do this 
 
 Access the Linux VM. Identify the connection you want to give a static ip address to:
 nmcli device status`
-![[images/Pasted image 20260517151749.png]]
+![](images/Pasted%20image%2020260517151749.png)
 
 
 In my example screenshot above, the connection I want to give a static ip address to is "enp0s8".  Use the below command to set the static ip address:
@@ -28,7 +28,7 @@ We bring the connection down and then back up to ensure the settings stick. If w
 
 Now, check that the connection profile has the ip address that you have set:
 ip a show enp0s8` (NOTE: my connection profile is called enp0s8, your profile name may be different.)
-![[images/Pasted image 20260517152749.png]]
+![](images/Pasted%20image%2020260517152749.png)
 We set the ip address to 192.168.56.101. We can see in the screenshot above that the ip address has been set to that.
 
 
@@ -114,7 +114,7 @@ Now that the public SSH key is on the Linux VM, fill out the PowerShell script a
 
 
 From here, either in your current administrator PowerShell session or in a new one, navigate to where the script is. Before running the script, ensure the Linux VM is powered off in virtualbox.
-![[images/Pasted image 20260517161409.png]]
+![](images/Pasted%20image%2020260517161409.png)
 
 
 Per the screenshot above, we have confirmed that the script ran successfully and are now in the Linux VM.
